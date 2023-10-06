@@ -21,7 +21,10 @@ A RealTime Chat App with NestJS, Postgres, Prisma, GraphQL, React and more.
   - `$ yarn add @nestjs/graphql @nestjs/apollo @apollo/server graphql graphql-upload`
 - **JWT** and main configuration:
   - `$ yarn add @nestjs/jwt bcrypt class-validator class-transformer cookie-parser @nestjs/config`
-  - `$ yarn add -D @types/cookie-parser @types/graphql-upload`
+  - `$ yarn add -D @types/bcrypt @types/cookie-parser @types/graphql-upload`
 
 ## Auth
 - https://docs.nestjs.com/security/authentication#jwt-based-authentication
+
+> IMPORTANT: This is a WIP project, so it's not finished yet!! <br/>
+> Working on the service side at the moment.
