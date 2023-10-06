@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  postgresql:
+    image: postgres:14-alpine
+    hostname: postgresql
+    container_name: postgresql
+    ports:
+      - '5432:5432'
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: chat-app
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: random_password
+      POSTGRES_HOST_AUTH_METHOD: 'scram-sha-256'
+
+  redis:
+    image: redis:7-alpine
+    hostname: redis
+    container_name: redis
+    ports:
+      - '6379:6379'
+
+volumes:
+  pg_data: {}
