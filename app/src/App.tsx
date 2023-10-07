@@ -5,7 +5,7 @@ import { Card, MantineProvider, Text } from '@mantine/core';
 function App() {
   return (
     <MantineProvider>
-      <Card>
+      <Card shadow="lg">
         <Text>hello</Text>
       </Card>
     </MantineProvider>

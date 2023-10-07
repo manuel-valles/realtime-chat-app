@@ -52,7 +52,7 @@ type User {
   createdAt: DateTime
   email: String!
   fullName: String!
-  id: String!
+  id: Float!
   password: String!
   updatedAt: DateTime
 }
