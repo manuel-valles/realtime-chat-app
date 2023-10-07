@@ -1,4 +1,4 @@
-import { Args, Context, Mutation, Resolver } from '@nestjs/graphql';
+import { Args, Context, Mutation, Query, Resolver } from '@nestjs/graphql';
 import { AuthService } from './auth.service';
 import { LoginResponse, RegisterResponse } from './auth.type';
 import { RegisterDto } from './auth.dto';
@@ -8,6 +8,11 @@ import { Request, Response } from 'express';
 @Resolver()
 export class AuthResolver {
   constructor(private readonly authService: AuthService) {}
+
+  @Query(() => String)
+  async hello() {
+    return 'hello';
+  }
 
   @Mutation(() => RegisterResponse)
   async register(

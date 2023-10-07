@@ -26,5 +26,8 @@ A RealTime Chat App with NestJS, Postgres, Prisma, GraphQL, React and more.
 ## Auth
 - https://docs.nestjs.com/security/authentication#jwt-based-authentication
 
+> NOTE: When using Studio Sandbox, you will need to comment out the `origin: 'http://loalhost:5173'` line in `main.ts` file. <br/>
+> To diagnose the problem, pleas run locally: `$npx diagnose-endpoint@1.1.0 --endpoint=http://127.0.0.1:3000/graphql`
+
 > IMPORTANT: This is a WIP project, so it's not finished yet!! <br/>
 > Working on the service side at the moment.

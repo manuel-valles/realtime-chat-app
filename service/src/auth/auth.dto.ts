@@ -4,36 +4,36 @@ import { IsEmail, IsNotEmpty, IsString, MinLength } from 'class-validator';
 @InputType()
 export class RegisterDto {
   @Field()
-  @IsNotEmpty({ message: 'Full name is required' })
-  @IsString({ message: 'Full name must be a string' })
+  @IsNotEmpty()
+  @IsString()
   fullName: string;
 
   @Field()
-  @IsNotEmpty({ message: 'Email is required' })
-  @IsEmail({}, { message: 'Email is invalid' })
+  @IsNotEmpty()
+  @IsEmail()
   email: string;
 
   @Field()
-  @IsNotEmpty({ message: 'Password is required' })
-  @IsString({ message: 'Password must be a string' })
-  @MinLength(8, { message: 'Password must be at least 8 characters' })
+  @IsNotEmpty()
+  @IsString()
+  @MinLength(8)
   password: string;
 
   @Field()
-  @IsNotEmpty({ message: 'Confirm password is required' })
-  @IsString({ message: 'Confirm password must be a string' })
+  @IsNotEmpty()
+  @IsString()
   confirmPassword: string;
 }
 
 @InputType()
 export class LoginDto {
   @Field()
-  @IsNotEmpty({ message: 'Email is required' })
-  @IsEmail({}, { message: 'Email is invalid' })
+  @IsNotEmpty()
+  @IsEmail()
   email: string;
 
   @Field()
-  @IsNotEmpty({ message: 'Password is required' })
-  @IsString({ message: 'Password must be a string' })
+  @IsNotEmpty()
+  @IsString()
   password: string;
 }

@@ -97,13 +97,14 @@ export class AuthService {
     });
 
     if (existingUser) {
-      throw new BadRequestException({ email: 'Email already in use' });
+      throw new BadRequestException('Email already in use');
     }
 
     const hashedPassword = await bcrypt.hash(registerDto.password, 10);
     const user = await this.prisma.user.create({
       data: {
-        ...registerDto,
+        fullName: registerDto.fullName,
+        email: registerDto.email,
         password: hashedPassword,
       },
     });
