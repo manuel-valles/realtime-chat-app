@@ -8,10 +8,10 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
   app.enableCors({
-    origin: 'http://loalhost:5173',
+    origin: ['http://localhost:5173'], // Add 'https://studio.apollographql.com' for Apollo Studio
     credentials: true,
     allowedHeaders: [
-      'apollo-require-pre-flight',
+      'apollo-require-preflight',
       'Accept',
       'Authorization',
       'Content-Type',

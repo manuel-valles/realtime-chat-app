@@ -6,10 +6,10 @@ This is the React App of the RealTime Chat App that has been built with Vite (Re
 
 ```bash
 # Development
-yarn run dev
+yarn dev
 
 # Production mode
-yarn run build && yarn run serve
+yarn build && yarn serve
 ```
 
 ## Routes
