@@ -24,7 +24,7 @@ export const useUserStore = create<UserState>()(
       updateUsername: (fullName: string) => set({ fullName }),
       setUser: (user) =>
         set({
-          id: user.id,
+          id: user.id || undefined,
           fullName: user.fullName,
           email: user.email,
           avatarUrl: user.avatarUrl,

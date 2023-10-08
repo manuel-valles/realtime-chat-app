@@ -81,8 +81,8 @@ export type User = {
   createdAt?: Maybe<Scalars['DateTime']['output']>;
   email: Scalars['String']['output'];
   fullName: Scalars['String']['output'];
-  id: Scalars['Float']['output'];
-  password: Scalars['String']['output'];
+  id?: Maybe<Scalars['Float']['output']>;
+  password?: Maybe<Scalars['String']['output']>;
   updatedAt?: Maybe<Scalars['DateTime']['output']>;
 };
 
@@ -161,7 +161,7 @@ export type User = {
   createdAt?: Maybe<Scalars['DateTime']['output']>;
   email: Scalars['String']['output'];
   fullName: Scalars['String']['output'];
-  id: Scalars['Float']['output'];
-  password: Scalars['String']['output'];
+  id?: Maybe<Scalars['Float']['output']>;
+  password?: Maybe<Scalars['String']['output']>;
   updatedAt?: Maybe<Scalars['DateTime']['output']>;
 };
