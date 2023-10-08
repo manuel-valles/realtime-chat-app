@@ -20,9 +20,7 @@ loadDevMessages();
 
 const GRAPHQL_URL = 'localhost:3000/graphql';
 
-const generateRefreshToken = async (
-  client: ApolloClient<NormalizedCacheObject>,
-) => {
+const generateRefreshToken = async (client: ApolloClient<NormalizedCacheObject>) => {
   try {
     const {
       data: { refreshToken },
@@ -105,10 +103,7 @@ const link = split(
   // Split based on operation type
   ({ query }) => {
     const definition = getMainDefinition(query);
-    return (
-      definition.kind === 'OperationDefinition' &&
-      definition.operation === 'subscription'
-    );
+    return definition.kind === 'OperationDefinition' && definition.operation === 'subscription';
   },
   webSocketLink,
   ApolloLink.from([errorLink, uploadLink]),

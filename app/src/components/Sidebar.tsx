@@ -20,30 +20,24 @@ interface NavbarLinkProps {
   onClick?(): void;
 }
 
-function NavbarLink({ icon: Icon, label, active, onClick }: NavbarLinkProps) {
+const NavbarLink = ({ icon: Icon, label, active, onClick }: NavbarLinkProps) => {
   return (
     <Tooltip label={label} position="right" transitionProps={{ duration: 0 }}>
-      <UnstyledButton
-        onClick={onClick}
-        className={classes.link}
-        data-active={active || undefined}
-      >
+      <UnstyledButton onClick={onClick} className={classes.link} data-active={active || undefined}>
         <Icon style={{ width: rem(20), height: rem(20) }} stroke={1.5} />
       </UnstyledButton>
     </Tooltip>
   );
-}
+};
 
 const mockData = [{ icon: IconBrandWechat, label: 'Chat Rooms' }];
 
-function Sidebar() {
+const Sidebar = () => {
   const user = useUserStore((state) => state);
   const userId = useUserStore((state) => state.id);
   const setUser = useUserStore((state) => state.setUser);
 
-  const toggleProfileSettingsModal = useGeneralStore(
-    (state) => state.toggleProfileSettingsModal,
-  );
+  const toggleProfileSettingsModal = useGeneralStore((state) => state.toggleProfileSettingsModal);
   const toggleLoginModal = useGeneralStore((state) => state.toggleLoginModal);
   const [logoutUser] = useMutation(logout, {
     onCompleted: () => {
@@ -90,22 +84,14 @@ function Sidebar() {
               label={`Profile(${user.fullName})`}
               onClick={toggleProfileSettingsModal}
             />
-            <NavbarLink
-              icon={IconLogout}
-              label="Logout"
-              onClick={handleLogout}
-            />
+            <NavbarLink icon={IconLogout} label="Logout" onClick={handleLogout} />
           </>
         ) : (
-          <NavbarLink
-            icon={IconLogin}
-            label="Login"
-            onClick={toggleLoginModal}
-          />
+          <NavbarLink icon={IconLogin} label="Login" onClick={toggleLoginModal} />
         )}
       </Stack>
     </nav>
   );
-}
+};
 
 export default Sidebar;

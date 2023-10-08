@@ -1,4 +1,5 @@
 # RealTime Chat App | React + TypeScript
+
 This is the React App of the RealTime Chat App that has been built with Vite (React with TypeScript).
 
 ## Running the app
@@ -12,6 +13,7 @@ yarn run build && yarn run serve
 ```
 
 ## Routes
+
 This app uses React Router to handle routes: https://reactrouter.com/en/main/start/overview
 
 ```bash
@@ -19,11 +21,13 @@ yarn add react-router-dom
 ```
 
 ## Navigation
+
 This app uses **Mantine** for the UI, including the Navigation: https://ui.mantine.dev/category/navbars/
 
-
 ## Icons
-This app uses **Tabler** Icons React: 
+
+This app uses **Tabler** Icons React:
+
 - https://tabler.io/docs/getting-started
 - https://www.npmjs.com/package/@tabler/icons-react
 
