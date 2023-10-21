@@ -16,6 +16,7 @@ const AuthOverlay = () => {
   const toggleForm = () => {
     setIsRegister(!isRegister);
   };
+  const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
 
   const Register = () => {
     const form = useForm({
@@ -28,11 +29,11 @@ const AuthOverlay = () => {
       validate: {
         fullName: (value: string) =>
           value.trim().length >= 3 ? null : 'Username must be at least 3 characters',
-        email: (value: string) => (value.includes('@') ? null : 'Invalid email'),
+        email: (value: string) => (emailPattern.test(value) ? null : 'Invalid email'),
         password: (value: string) =>
-          value.trim().length >= 3 ? null : 'Password must be at least 3 characters',
+          value.trim().length >= 8 ? null : 'Password must be at least 8 characters',
         confirmPassword: (value: string, values) =>
-          value.trim().length >= 3 && value === values.password ? null : 'Passwords do not match',
+          value.trim().length >= 8 && value === values.password ? null : 'Passwords do not match',
       },
     });
 
@@ -82,7 +83,7 @@ const AuthOverlay = () => {
                 label="Full Name"
                 placeholder="Choose a full name"
                 {...form.getInputProps('fullName')}
-                error={form.errors.username || (errors?.username as string)}
+                error={form.errors.fullName || (errors?.fullName as string)}
               />
             </Grid.Col>
             <Grid.Col span={{ base: 12, md: 6 }}>
@@ -142,9 +143,9 @@ const AuthOverlay = () => {
         password: '',
       },
       validate: {
-        email: (value: string) => (value.includes('@') ? null : 'Invalid email'),
+        email: (value: string) => (emailPattern.test(value) ? null : 'Invalid email'),
         password: (value: string) =>
-          value.trim().length >= 3 ? null : 'Password must be at least 3 characters',
+          value.trim().length >= 8 ? null : 'Password must be at least 8 characters',
       },
     });
 
